@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ananda Hasanah, S.Pd.">
+<meta name="theme-color" content="#2f4aa3">
+<meta name="description" content="Refleksi Pengalaman Belajar Selama Mengikuti PPG — Ananda Hasanah, S.Pd., Mahasiswa PPG Universitas Kristen Satya Wacana 2026, Bidang Matematika">
+<title>Refleksi PPG — Ananda Hasanah, S.Pd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* NAVY — versi lebih terang */
+  --navy:#2f4aa3;
+  --navy2:#3d5ac0;
+  --navy3:#1f3380;
+  --ink:#172554;
+  /* PINK */
+  --pink:#ff3d8f; --pink2:#ff7ab3; --pinkT:#ffa3cd; --pinkL:#ffd3e6; --pinkXL:#fff1f7;
+  --white:#ffffff;
+  --head:'Archivo',sans-serif; --body:'DM Sans',sans-serif; --serif:'Playfair Display',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--navy);color:var(--white);line-height:1.85;overflow-x:hidden;font-size:1.02rem}
+::selection{background:var(--pink);color:#fff}
+a{color:inherit}
+
+/* ===== FOTO (umum) ===== */
+img.foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+
+/* ===== PROGRESS ===== */
+#progress{position:fixed;top:0;left:0;height:6px;width:0;background:var(--pink);z-index:1100;box-shadow:0 0 14px var(--pink)}
+
+/* ===== NAV ===== */
+header{position:fixed;top:6px;left:0;right:0;z-index:1000;background:rgba(47,74,163,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:2px solid var(--pink)}
+.nav{max-width:1180px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--head);font-weight:800;font-size:.95rem;letter-spacing:.5px}
+.logo i{font-style:normal;background:var(--pink);color:var(--ink);width:38px;height:38px;display:grid;place-items:center;border-radius:10px;font-weight:900;box-shadow:3px 3px 0 #fff}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:10px 14px;border-radius:8px;transition:.25s;display:block}
+.nav-links a:hover,.nav-links a.active{background:var(--pink);color:var(--ink)}
+.menu-btn{display:none;background:var(--pink);border:none;color:var(--ink);font-size:1.3rem;width:42px;height:42px;border-radius:10px;cursor:pointer;font-weight:900}
+@media(max-width:940px){
+  .menu-btn{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--navy);padding:12px 24px 20px;border-bottom:2px solid var(--pink);display:none}
+  .nav-links.open{display:flex}
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 24px 90px;overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,61,143,.45),transparent 45%),
+    radial-gradient(circle at 10% 90%,rgba(110,142,245,.6),transparent 55%),
+    linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+}
+.hero-inner{max-width:1180px;margin:auto;width:100%;position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:var(--ink);font-family:var(--head);font-weight:800;font-size:.75rem;letter-spacing:2.5px;text-transform:uppercase;padding:9px 20px;border-radius:999px;box-shadow:4px 4px 0 #fff;margin-bottom:34px}
+.hero h1{font-family:var(--head);font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-2px}
+.hero h1 .l1{display:block;font-size:clamp(3.2rem,11vw,9rem)}
+.hero h1 .l2{display:block;font-size:clamp(2rem,6.6vw,5.4rem);color:transparent;-webkit-text-stroke:2px var(--pinkT);margin:6px 0}
+.hero h1 .l3{display:block;font-size:clamp(3.2rem,11vw,9rem);color:var(--pink);text-shadow:6px 6px 0 var(--navy3)}
+.hero .sub{max-width:620px;margin:34px 0 38px;font-size:1.12rem;color:#e3e9ff}
+.hero-author{display:inline-flex;align-items:center;gap:20px;background:#fff;color:var(--ink);padding:16px 30px 16px 16px;border-radius:24px;box-shadow:8px 8px 0 var(--pink);flex-wrap:wrap}
+.avatar{position:relative;width:88px;height:88px;border-radius:50%;background:var(--navy);color:var(--pinkT);display:grid;place-items:center;font-family:var(--head);font-weight:900;font-size:1.5rem;border:4px solid var(--pink);flex-shrink:0;overflow:hidden;box-shadow:4px 4px 0 var(--navy)}
+.hero-author small{display:block;font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--pink);font-weight:800}
+.hero-author strong{display:block;font-family:var(--head);font-size:1.3rem;font-weight:900;line-height:1.2}
+.hero-author span.role{font-size:.85rem;color:#44507a;display:block;line-height:1.5;font-weight:500}
+.btns{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
+.btn{text-decoration:none;font-family:var(--head);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.82rem;padding:16px 32px;border-radius:12px;border:3px solid var(--pink);transition:.2s;display:inline-block}
+.btn-pink{background:var(--pink);color:var(--ink);box-shadow:5px 5px 0 #fff}
+.btn-pink:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 #fff}
+.btn-line{color:#fff}
+.btn-line:hover{background:var(--pink);color:var(--ink)}
+.shape{position:absolute;z-index:1}
+.s1{width:150px;height:150px;border-radius:50%;background:var(--pink);right:8%;top:22%;animation:fl 7s ease-in-out infinite;opacity:.9}
+.s2{width:110px;height:110px;border:6px solid #fff;right:20%;bottom:14%;transform:rotate(18deg);animation:fl 9s ease-in-out infinite reverse}
+.s3{font-family:var(--head);font-weight:900;font-size:6rem;color:var(--pinkT);right:5%;bottom:30%;animation:spin 14s linear infinite}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-28px) rotate(12deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.s1,.s2,.s3{opacity:.25}}
+
+/* ===== MARQUEE ===== */
+.marquee-wrap{background:var(--navy2);padding:34px 0;overflow:hidden}
+.marquee{background:var(--pink);color:var(--ink);border-block:4px solid #fff;transform:rotate(-1.6deg);width:106%;margin-left:-3%;overflow:hidden}
+.track{display:flex;width:max-content;animation:slide 30s linear infinite}
+.track span{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:1.15rem;padding:16px 26px;white-space:nowrap;letter-spacing:1px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ===== SECTIONS ===== */
+section{padding:110px 24px;position:relative;scroll-margin-top:70px}
+.wrap{max-width:1000px;margin:auto}
+.wrap.wide{max-width:1180px}
+.on-navy{background:var(--navy)}
+.on-navy2{background:var(--navy2)}
+.on-pink{background:var(--pinkL);color:var(--ink)}
+
+.sec-head{position:relative;margin-bottom:60px}
+.big-num{position:absolute;top:-62px;left:-8px;font-family:var(--head);font-weight:900;font-size:clamp(7rem,18vw,13rem);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.28);z-index:0;pointer-events:none}
+.on-pink .big-num{-webkit-text-stroke:2px rgba(23,37,84,.22)}
+.kicker{position:relative;z-index:1;display:inline-block;background:#fff;color:var(--ink);font-family:var(--head);font-weight:800;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;padding:8px 18px;border-radius:8px;box-shadow:4px 4px 0 var(--pink);margin-bottom:22px}
+.on-pink .kicker{background:var(--navy);color:#fff;box-shadow:4px 4px 0 var(--pink)}
+.sec-head h2{position:relative;z-index:1;font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.8rem,4.6vw,3.3rem);line-height:1.08;letter-spacing:-1px;max-width:860px}
+.sec-head h2 em{font-style:normal;color:var(--pinkT)}
+.on-pink .sec-head h2 em{background:var(--navy);color:var(--pinkT);padding:0 10px}
+
+/* ===== CARDS ===== */
+.card{background:#fff;color:var(--ink);border-radius:22px;padding:42px 46px;box-shadow:10px 10px 0 var(--pink);margin-bottom:46px;position:relative}
+.card p{margin-bottom:1.15em}
+.card p:last-child{margin-bottom:0}
+.card mark{background:var(--pinkL);color:var(--ink);padding:1px 6px;border-radius:5px;font-weight:700;box-shadow:inset 0 -3px 0 var(--pink)}
+.card.dark{background:var(--navy);color:#fff;box-shadow:10px 10px 0 var(--pink)}
+.card.dark mark{background:var(--pink);color:var(--ink);box-shadow:none}
+.on-navy2 .card.dark{background:var(--navy3)}
+@media(max-width:640px){.card{padding:28px 24px;box-shadow:6px 6px 0 var(--pink)}}
+
+/* ===== QUOTE ===== */
+.quote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.35rem,3.2vw,2.3rem);line-height:1.45;border-left:10px solid var(--pink);padding:8px 0 8px 32px;margin:64px 0}
+.quote b{font-weight:700;color:var(--pinkT)}
+.on-pink .quote{border-color:var(--navy)}
+.on-pink .quote b{background:var(--navy);color:#fff;padding:0 10px;font-style:italic}
+
+/* ===== SHIFT ===== */
+.shift{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:46px}
+.panel{border-radius:22px;padding:36px 34px;position:relative}
+.panel .tag{display:inline-block;font-family:var(--head);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:.72rem;padding:7px 16px;border-radius:8px;margin-bottom:20px}
+.panel.before{background:transparent;border:3px dashed var(--pinkT);color:#eef1ff}
+.panel.before .tag{background:#fff;color:var(--ink)}
+.panel.after{background:var(--pink);color:var(--ink);box-shadow:10px 10px 0 #fff}
+.panel.after .tag{background:var(--navy);color:#fff}
+.panel.after p{font-weight:500}
+.panel p{margin-bottom:1em}
+.panel p:last-child{margin-bottom:0}
+.panel.after mark{background:var(--navy);color:#fff;padding:1px 6px;border-radius:5px;font-weight:700}
+@media(max-width:820px){.shift{grid-template-columns:1fr}}
+
+/* ===== PILLARS ===== */
+.balance-title{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.2rem,2.6vw,1.7rem);margin:70px 0 26px;letter-spacing:-.3px}
+.balance-title span{color:var(--pinkT)}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:46px}
+.pillar{border-radius:18px;padding:28px 22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s;border:3px solid #fff;font-family:var(--head)}
+.pillar:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--pink)}
+.pillar b{font-size:2.6rem;font-weight:900;line-height:1;color:var(--pinkT)}
+.pillar h4{font-size:1.18rem;font-weight:900;text-transform:uppercase;line-height:1.2}
+.pillar:nth-child(even){background:var(--pink);color:var(--ink);border-color:var(--pink)}
+.pillar:nth-child(even) b{color:#fff}
+@media(max-width:860px){.pillars{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== KEYWORDS ===== */
+.kw-title{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.1rem,2.4vw,1.5rem);margin:6px 0 22px}
+.kw{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
+.kw div{background:var(--navy);color:#fff;border-radius:18px;padding:26px 24px;font-family:var(--head);font-weight:800;font-size:1.08rem;line-height:1.35;box-shadow:6px 6px 0 var(--pink);text-transform:uppercase;transition:.25s}
+.kw div:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--pink)}
+.kw div span{display:block;font-size:1.9rem;margin-bottom:10px}
+@media(max-width:760px){.kw{grid-template-columns:1fr}}
+
+/* ===== PLAN ===== */
+.plan-card{display:grid;grid-template-columns:.8fr 1.6fr;gap:40px;background:var(--navy2);border:3px solid var(--pink);border-radius:26px;padding:44px;margin-bottom:34px;transition:.3s;position:relative}
+.plan-card:hover{transform:translate(-5px,-5px);box-shadow:12px 12px 0 var(--pink)}
+.plan-num{font-family:var(--head);font-weight:900;font-size:clamp(5rem,12vw,9rem);line-height:.9;color:transparent;-webkit-text-stroke:3px var(--pinkT)}
+.plan-left h3{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.2;margin-top:16px;letter-spacing:-.3px}
+.plan-right p{margin-bottom:1.1em;color:#eef1ff}
+.plan-right p:last-child{margin-bottom:0}
+.plan-right mark{background:var(--pink);color:var(--ink);padding:1px 6px;border-radius:5px;font-weight:700}
+.q-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 24px}
+.q-list li{background:#fff;color:var(--ink);font-family:var(--serif);font-style:italic;font-weight:500;padding:10px 18px;border-radius:999px;font-size:.95rem;box-shadow:3px 3px 0 var(--pink);line-height:1.5}
+@media(max-width:860px){.plan-card{grid-template-columns:1fr;gap:18px;padding:30px 24px}}
+
+/* ===== PENULIS ===== */
+.author-box{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;background:#fff;color:var(--ink);border-radius:28px;padding:52px 52px 52px 48px;box-shadow:12px 12px 0 var(--pink)}
+.photo-wrap{position:relative;width:270px;flex-shrink:0}
+.photo-wrap::before{ /* bentuk dekoratif di belakang foto */
+  content:"";position:absolute;inset:-14px 14px 14px -14px;border-radius:30px;background:var(--pinkL);z-index:0}
+.photo-frame{position:relative;z-index:1;width:100%;aspect-ratio:3/4;border-radius:28px;overflow:hidden;border:6px solid var(--pink);background:var(--navy);box-shadow:10px 10px 0 var(--navy3);display:grid;place-items:center}
+.photo-frame .initials{font-family:var(--head);font-weight:900;font-size:4.4rem;color:var(--pinkT);letter-spacing:-3px}
+.photo-frame img.foto{object-position:center 12%}
+.photo-sticker{position:absolute;z-index:2;right:-26px;bottom:26px;background:var(--navy);color:#fff;font-family:var(--head);font-weight:900;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:11px 18px;border-radius:10px;border:3px solid #fff;box-shadow:4px 4px 0 var(--pink);transform:rotate(-6deg);line-height:1.3;text-align:center}
+.photo-sticker b{color:var(--pinkT);display:block}
+.photo-star{position:absolute;z-index:2;left:-22px;top:-20px;width:54px;height:54px;border-radius:50%;background:var(--pink);color:var(--ink);display:grid;place-items:center;font-size:1.5rem;font-weight:900;border:3px solid #fff;box-shadow:3px 3px 0 var(--navy);animation:spin 14s linear infinite}
+.author-info small{font-family:var(--head);font-weight:800;color:var(--pink);letter-spacing:3px;text-transform:uppercase;font-size:.75rem}
+.author-info h3{font-family:var(--head);font-weight:900;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.05;text-transform:uppercase;margin:8px 0 20px;letter-spacing:-1px}
+.author-info p{color:#44507a;margin-bottom:20px;max-width:560px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--head);font-weight:800;font-size:.76rem;letter-spacing:1px;text-transform:uppercase;padding:10px 18px;border-radius:10px;background:var(--navy);color:#fff}
+.chip.p{background:var(--pink);color:var(--ink)}
+@media(max-width:860px){
+  .author-box{grid-template-columns:1fr;text-align:center;padding:40px 26px;justify-items:center;gap:44px}
+  .chips{justify-content:center}
+  .photo-wrap{width:230px}
+  .photo-sticker{right:-18px}
+  .author-info p{margin-inline:auto}
+}
+
+/* ===== CLOSING ===== */
+.closing{background:var(--pink);color:var(--ink);text-align:center;padding:130px 24px;overflow:hidden}
+.closing::before,.closing::after{content:"";position:absolute;border-radius:50%;background:var(--navy);opacity:.12}
+.closing::before{width:420px;height:420px;top:-160px;left:-120px}
+.closing::after{width:340px;height:340px;bottom:-140px;right:-100px}
+.closing .wrap{position:relative;z-index:2;max-width:900px}
+.closing .small{display:inline-block;background:var(--navy);color:#fff;font-family:var(--head);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:.75rem;padding:9px 20px;border-radius:8px;margin-bottom:30px}
+.closing h2{font-family:var(--head);font-weight:900;text-transform:uppercase;line-height:.95;font-size:clamp(2.6rem,9vw,6.5rem);letter-spacing:-3px;margin-bottom:34px}
+.closing h2 .plus{display:block;color:#fff;font-size:.55em;margin:6px 0}
+.closing p{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.1rem,2.3vw,1.45rem);line-height:1.8;background:#fff;padding:36px 38px;border-radius:22px;box-shadow:10px 10px 0 var(--navy);text-align:left}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy3);padding:70px 24px 50px;text-align:center}
+.f-photo{position:relative;width:96px;height:96px;border-radius:50%;overflow:hidden;border:4px solid var(--pink);margin:0 auto 22px;background:var(--navy);display:grid;place-items:center;box-shadow:5px 5px 0 var(--pinkT);font-family:var(--head);font-weight:900;color:var(--pinkT);font-size:1.8rem}
+.f-sign{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.2rem);letter-spacing:-.5px}
+.f-sign em{font-style:normal;color:var(--pinkT)}
+.f-role{color:#d3dbff;margin:10px auto 28px;max-width:560px;font-size:.95rem}
+.f-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.f-tags span{font-family:var(--head);font-weight:800;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;border:2px solid var(--pink);color:var(--pinkT);padding:8px 16px;border-radius:8px}
+.f-tags span.fill{background:var(--pink);color:var(--ink)}
+.f-copy{font-size:.8rem;color:#b5c0f0}
+
+/* ===== TOP BTN ===== */
+#toTop{position:fixed;right:24px;bottom:24px;width:54px;height:54px;border-radius:14px;border:3px solid var(--navy);background:var(--pink);color:var(--ink);font-weight:900;font-size:1.3rem;cursor:pointer;z-index:1050;box-shadow:4px 4px 0 #fff;opacity:0;pointer-events:none;transition:.3s}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 #fff}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo"><i>AH</i><span>REFLEKSI PPG</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#penulis">Penulis</a></li>
+      <li><a href="#refleksi1">Pendidikan</a></li>
+      <li><a href="#refleksi2">Guru Profesional</a></li>
+      <li><a href="#tindaklanjut">Tindak Lanjut</a></li>
+      <li><a href="#penutup">Penutup</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="top">
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+  <div class="shape s3">✦</div>
+  <div class="hero-inner">
+    <div class="pill">● Lembar Kerja 3 (LK 3) · PPG Calon Guru</div>
+    <h1>
+      <span class="l1">Refleksi</span>
+      <span class="l2">Pengalaman Belajar</span>
+      <span class="l3">Selama PPG</span>
+    </h1>
+    <p class="sub">Perjalanan memahami makna mendidik: dari sekadar menyampaikan materi, menjadi guru yang hadir, mendengarkan, dan benar-benar melihat setiap siswanya.</p>
+
+    <div class="hero-author">
+      <div class="avatar">AH<img class="foto" alt="Foto Ananda Hasanah, S.Pd."></div>
+      <div>
+        <small>Ditulis oleh</small>
+        <strong>Ananda Hasanah, S.Pd.</strong>
+        <span class="role">Mahasiswa PPG Universitas Kristen Satya Wacana 2026<br>Bidang Matematika</span>
+      </div>
+    </div>
+
+    <div class="btns">
+      <a href="#refleksi1" class="btn btn-pink">Mulai Membaca →</a>
+      <a href="#tindaklanjut" class="btn btn-line">Rencana Tindak Lanjut</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <div class="track">
+      <span>Memanusiakan Siswa ✦</span><span>Akademik + Karakter ✦</span><span>Guru Reflektif ✦</span><span>Mengenal Siswa ✦</span><span>Kelas yang Aman ✦</span><span>Terus Belajar ✦</span>
+      <span>Memanusiakan Siswa ✦</span><span>Akademik + Karakter ✦</span><span>Guru Reflektif ✦</span><span>Mengenal Siswa ✦</span><span>Kelas yang Aman ✦</span><span>Terus Belajar ✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PENULIS ================= -->
+<section class="on-navy" id="penulis">
+  <div class="wrap">
+    <div class="author-box reveal">
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <span class="initials">AH</span>
+          <img class="foto" alt="Foto Ananda Hasanah, S.Pd.">
+        </div>
+        <div class="photo-star">✦</div>
+        <div class="photo-sticker">Calon Guru<b>Matematika</b></div>
+      </div>
+      <div class="author-info">
+        <small>Tentang Penulis</small>
+        <h3>Ananda Hasanah, S.Pd.</h3>
+        <p>Mahasiswa Program Pendidikan Profesi Guru (PPG) yang menuliskan refleksi ini sebagai catatan perjalanan belajarnya, dari pengalaman mengajar langsung hingga rencana langkah pertamanya sebagai guru.</p>
+        <div class="chips">
+          <span class="chip p">Mahasiswa PPG</span>
+          <span class="chip">Universitas Kristen Satya Wacana</span>
+          <span class="chip p">Angkatan 2026</span>
+          <span class="chip">Bidang Matematika</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REFLEKSI 1 ================= -->
+<section class="on-navy2" id="refleksi1">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="big-num">01</div>
+      <span class="kicker">Refleksi · Bagian 1</span>
+      <h2>Bagaimana seharusnya <em>pendidikan di Indonesia?</em></h2>
+    </div>
+
+    <div class="card reveal">
+      <p>Setelah mengikuti rangkaian PPG dan mengalami secara langsung proses pembelajaran di sekolah, saya semakin menyadari bahwa pendidikan di Indonesia seharusnya <mark>tidak hanya berorientasi pada seberapa banyak materi yang dapat disampaikan atau seberapa tinggi nilai yang diperoleh siswa</mark>. Pendidikan seharusnya menjadi proses untuk membantu setiap siswa berkembang sebagai manusia, sesuai dengan potensi dan kebutuhannya masing-masing.</p>
+    </div>
+
+    <div class="shift reveal">
+      <div class="panel before">
+        <span class="tag">Sebelumnya</span>
+        <p>Saya cenderung melihat pembelajaran dari sudut pandang guru sebagai pengajar: bagaimana materi dapat tersampaikan dan bagaimana siswa dapat memahami materi tersebut.</p>
+      </div>
+      <div class="panel after">
+        <span class="tag">Setelah PPL</span>
+        <p>Pengalaman selama PPL mengubah cara pandang saya. Saya melihat bahwa di balik seorang siswa yang belum memahami materi, bisa terdapat <mark>rasa takut, kurang percaya diri, pengalaman belajar yang berbeda, atau kebutuhan yang belum kita pahami</mark>.</p>
+        <p>Bahkan sebuah kalimat sederhana dari teman dalam kerja kelompok dapat memengaruhi bagaimana seorang siswa memandang kemampuan dirinya.</p>
+      </div>
+    </div>
+
+    <div class="quote reveal">Pendidikan yang baik adalah pendidikan yang <b>memanusiakan siswa.</b></div>
+
+    <div class="card reveal">
+      <p>Karena itu, saya memandang pendidikan yang baik adalah pendidikan yang memanusiakan siswa. Pendidikan tidak hanya membantu siswa menjadi cerdas secara akademik, tetapi juga membentuk karakter dan kemampuan mereka dalam membawa diri di berbagai lingkungan. Siswa perlu belajar bagaimana menghargai orang lain, memahami perbedaan, menyampaikan pendapat dengan cara yang tepat, serta mengetahui bagaimana menempatkan diri ketika berinteraksi dengan teman, guru, maupun orang lain di lingkungan masyarakat. Dari sini diharapkan tumbuh <mark>rasa saling menghormati, bukan hanya karena adanya aturan, tetapi karena siswa memahami pentingnya menghargai orang lain</mark>.</p>
+      <p>Namun, bagi saya, pembentukan karakter tidak berarti membuat aspek akademik menjadi kurang penting. Akademik siswa juga tidak kalah penting karena hal tersebut merupakan salah satu tujuan utama pembelajaran di kelas. Guru tetap memiliki tanggung jawab untuk memastikan siswa memahami konsep dan mencapai kompetensi yang diharapkan. Hanya saja, pencapaian akademik tersebut sebaiknya <mark>berjalan beriringan dengan perkembangan karakter dan sosial emosional siswa</mark>. Saya tidak ingin siswa hanya mendapatkan nilai yang baik, tetapi tidak mampu bekerja sama, menghargai orang lain, atau membawa dirinya dengan baik.</p>
+    </div>
+
+    <h3 class="balance-title reveal">Pendidikan yang baik <span>menyeimbangkan:</span></h3>
+    <div class="pillars reveal">
+      <div class="pillar"><b>01</b><h4>Pengetahuan</h4></div>
+      <div class="pillar"><b>02</b><h4>Keterampilan</h4></div>
+      <div class="pillar"><b>03</b><h4>Karakter</h4></div>
+      <div class="pillar"><b>04</b><h4>Sosial Emosional</h4></div>
+    </div>
+
+    <div class="card dark reveal">
+      <p>Dengan demikian, pendidikan yang baik bagi saya adalah pendidikan yang mampu <mark>menyeimbangkan pengetahuan, keterampilan, karakter, dan perkembangan sosial emosional siswa</mark>. Siswa tidak hanya dipersiapkan untuk menjawab soal dan memperoleh nilai, tetapi juga dipersiapkan untuk menjadi pribadi yang mampu berpikir, bertanggung jawab, menghargai orang lain, dan hidup berdampingan dengan berbagai perbedaan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REFLEKSI 2 ================= -->
+<section class="on-pink" id="refleksi2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="big-num">02</div>
+      <span class="kicker">Refleksi · Bagian 2</span>
+      <h2>Apa yang dapat saya lakukan untuk menjadi <em>guru profesional?</em></h2>
+    </div>
+
+    <div class="card dark reveal">
+      <p>Bagi saya, menjadi guru profesional bukan berarti harus menjadi guru yang selalu berhasil menjalankan pembelajaran sesuai rencana. Justru pengalaman PPL membuat saya memahami bahwa <mark>kelas tidak pernah sepenuhnya dapat diprediksi</mark>. Karena itu, profesionalisme bagi saya berarti memiliki kemauan untuk terus belajar, kemampuan membaca situasi, dan keberanian untuk merefleksikan kekurangan diri sendiri.</p>
+    </div>
+
+    <h3 class="kw-title reveal">Profesionalisme berarti memiliki:</h3>
+    <div class="kw reveal">
+      <div><span>📚</span>Kemauan untuk terus belajar</div>
+      <div><span>👀</span>Kemampuan membaca situasi</div>
+      <div><span>🪞</span>Keberanian merefleksikan kekurangan diri</div>
+    </div>
+
+    <div class="card dark reveal">
+      <p>Saya perlu terus memperdalam pemahaman tentang peserta didik sehingga tidak terburu-buru menyimpulkan bahwa siswa yang lambat memahami materi berarti tidak mampu. Saya perlu belajar merancang pembelajaran yang lebih adaptif melalui <mark>diferensiasi, TaRL, pembelajaran mendalam</mark>, serta memanfaatkan asesmen untuk mengetahui kebutuhan siswa. Namun, saya juga perlu memastikan bahwa penerapan berbagai pendekatan tersebut tetap mengarah pada tujuan pembelajaran. Diferensiasi bukan berarti menurunkan tuntutan akademik, tetapi mencari cara yang lebih sesuai agar setiap siswa memiliki kesempatan untuk mencapai tujuan tersebut.</p>
+      <p>Selain kemampuan pedagogis, saya perlu membangun kepekaan sebagai seorang pendidik. Saya perlu memperhatikan hal-hal kecil yang terjadi di kelas, termasuk interaksi antarsiswa dan kondisi emosional mereka. Pengalaman ketika saya tidak langsung merespons celetukan seorang siswa dalam kerja kelompok membuat saya sadar bahwa terkadang hal kecil yang luput dari perhatian guru dapat memberikan dampak bagi siswa lain. Begitu pula ketika menghadapi siswa yang menangis karena merasa tidak mampu memahami materi. Saya belajar bahwa <mark>guru tidak selalu harus memiliki jawaban yang sempurna, tetapi harus mampu hadir, mendengarkan, dan memberikan dukungan</mark> yang dibutuhkan siswa.</p>
+      <p>Saya juga ingin menjadi guru yang tidak hanya mengajarkan apa yang harus diketahui siswa, tetapi juga bagaimana seharusnya mereka bersikap. Pembelajaran karakter perlu hadir dalam keseharian, melalui cara guru berbicara, memberikan contoh, menghargai siswa, maupun memberikan teguran ketika diperlukan. Saya ingin membantu siswa memahami bahwa kemampuan membawa diri dan menghormati orang lain juga merupakan bekal penting untuk kehidupan mereka.</p>
+      <p>Pada akhirnya, saya ingin menjadi guru yang kompeten dalam mengajar sekaligus reflektif dalam mendidik. Saya ingin terus memperbaiki diri, terbuka terhadap masukan, memanfaatkan teknologi secara bijak, dan tidak berhenti belajar.</p>
+    </div>
+
+    <div class="quote reveal">Guru profesional bukanlah guru yang tidak pernah melakukan kesalahan, melainkan guru yang <b>mampu menyadari kekurangannya</b> dan menjadikannya sebagai bahan untuk terus berkembang.</div>
+  </div>
+</section>
+
+<!-- ================= TINDAK LANJUT ================= -->
+<section class="on-navy" id="tindaklanjut">
+  <div class="wrap wide">
+    <div class="sec-head reveal">
+      <div class="big-num">03</div>
+      <span class="kicker">Rencana Tindak Lanjut</span>
+      <h2>Tiga hal penting saat <em>memulai karier</em> sebagai guru</h2>
+    </div>
+
+    <div class="plan-card reveal">
+      <div class="plan-left">
+        <div class="plan-num">01</div>
+        <h3>Mengenal siswa sebelum menentukan bagaimana saya akan mengajar.</h3>
+      </div>
+      <div class="plan-right">
+        <p>Saya tidak ingin langsung menganggap bahwa semua siswa dapat belajar dengan cara yang sama. Pada awal pembelajaran, saya ingin mengenali <mark>kemampuan awal, karakter, minat, kebutuhan, serta kondisi sosial emosional siswa</mark>. Bagi saya, mengenal siswa bukan sekadar mengetahui nama mereka, tetapi memahami siapa mereka sebagai individu. Dengan mengenal siswa, saya dapat merancang pembelajaran yang lebih sesuai tanpa mengabaikan tujuan akademik yang harus dicapai.</p>
+      </div>
+    </div>
+
+    <div class="plan-card reveal">
+      <div class="plan-left">
+        <div class="plan-num">02</div>
+        <h3>Membangun kelas yang aman, saling menghargai, dan tetap memiliki batas yang jelas.</h3>
+      </div>
+      <div class="plan-right">
+        <p>Saya ingin menjadi guru yang dekat dengan siswa, sehingga mereka tidak takut untuk bertanya, mengakui kesulitan, atau melakukan kesalahan. Namun, saya juga menyadari bahwa menjadi guru bukan berarti selalu membiarkan atau memaklumi semua perilaku siswa. Saya perlu mampu <mark>memberikan teguran ketika diperlukan</mark>, terutama ketika suatu perilaku dapat merugikan atau membuat siswa lain merasa tidak dihargai.</p>
+        <p>Saya juga ingin menjadikan kelas sebagai tempat siswa belajar bagaimana membawa diri ketika berinteraksi dengan orang lain. Mereka perlu belajar menghargai teman yang berbeda kemampuan, mendengarkan ketika orang lain berbicara, menggunakan bahasa yang sesuai ketika berbicara dengan guru, dan memahami bahwa setiap lingkungan memiliki aturan serta cara berinteraksi yang perlu diperhatikan. Saya berharap dari kebiasaan sederhana tersebut tumbuh rasa saling menghormati.</p>
+      </div>
+    </div>
+
+    <div class="plan-card reveal">
+      <div class="plan-left">
+        <div class="plan-num">03</div>
+        <h3>Menjadikan refleksi sebagai kebiasaan dalam menjalankan profesi.</h3>
+      </div>
+      <div class="plan-right">
+        <p>Saya ingin membiasakan diri bertanya setelah pembelajaran:</p>
+        <ul class="q-list">
+          <li>Apa yang sudah berjalan baik?</li>
+          <li>Siapa yang masih tertinggal?</li>
+          <li>Mengapa mereka belum memahami?</li>
+          <li>Bagaimana interaksi antarsiswa hari ini?</li>
+          <li>Apakah ada siswa yang merasa tidak dihargai?</li>
+          <li>Apa yang seharusnya saya lakukan dengan lebih baik?</li>
+        </ul>
+        <p>Saya tidak ingin mengukur keberhasilan hanya dari apakah materi selesai atau nilai siswa tinggi. Namun, saya juga tidak ingin mengabaikan pencapaian akademik karena itu tetap merupakan tujuan penting dalam pembelajaran. Saya ingin melihat keduanya secara seimbang: <mark>apakah siswa memahami materi dan mencapai kompetensi yang diharapkan, sekaligus apakah mereka berkembang menjadi pribadi yang lebih percaya diri, bertanggung jawab, mampu bekerja sama, dan menghargai orang lain</mark>.</p>
+        <p>Pada akhirnya, saya ingin hadir sebagai guru yang benar-benar melihat siswanya. Bukan hanya melihat nilainya, tetapi juga melihat usaha, kesulitan, potensi, perasaan, karakter, dan proses perkembangannya. Saya ingin siswa tidak hanya keluar dari kelas dengan membawa pengetahuan matematika, tetapi juga membawa <mark>cara berpikir dan sikap</mark> yang dapat mereka gunakan ketika berinteraksi dengan orang lain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PENUTUP ================= -->
+<section class="closing" id="penutup">
+  <div class="wrap reveal">
+    <span class="small">Karena bagi saya…</span>
+    <h2>Akademik <span class="plus">+</span> Karakter</h2>
+    <p>Keberhasilan pendidikan bukan berarti harus memilih antara akademik atau karakter. Keduanya justru harus berjalan bersama. Siswa perlu memiliki kemampuan akademik yang baik sebagai bekal untuk melanjutkan pendidikan dan mencapai cita-citanya, tetapi mereka juga perlu memiliki karakter dan kemampuan sosial yang membuat mereka mampu menggunakan pengetahuan tersebut dengan baik dalam kehidupan.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="f-photo">AH<img class="foto" alt="Foto Ananda Hasanah, S.Pd."></div>
+  <div class="f-sign">Ditulis oleh <em>Ananda Hasanah, S.Pd.</em></div>
+  <p class="f-role">Mahasiswa PPG Universitas Kristen Satya Wacana 2026 · Bidang Matematika</p>
+  <div class="f-tags">
+    <span class="fill">#PPGCalonGuru</span>
+    <span>#PendidikanBermutuUntukSemua</span>
+    <span class="fill">#RAMAH</span>
+  </div>
+  <p class="f-copy">LEMBAR KERJA 3 (LK 3) · Refleksi Pengalaman Belajar Selama Mengikuti PPG · © 2026 Ananda Hasanah, S.Pd.</p>
+</footer>
+
+<button id="toTop" aria-label="Kembali ke atas">↑</button>
+
+<script>
+/* ============================================================
+   FOTO PENULIS — ganti nama file di sini bila perlu
+   (file harus berada di folder yang sama dengan file HTML ini)
+   ============================================================ */
+const FOTO = 'foto-ananda.png';
+
+document.querySelectorAll('img.foto').forEach(img=>{
+  img.addEventListener('error',()=>{ img.style.display='none'; }); // jika foto tidak ditemukan, tampil inisial "AH"
+  img.src = FOTO;
+});
+
+/* progress + to-top */
+const bar=document.getElementById('progress'), toTop=document.getElementById('toTop');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  toTop.classList.toggle('show',h.scrollTop>600);
+});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* mobile menu */
+const menuBtn=document.getElementById('menuBtn'), navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  navLinks.classList.toggle('open');
+  menuBtn.textContent=navLinks.classList.contains('open')?'✕':'☰';
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open');menuBtn.textContent='☰';
+}));
+
+/* active nav link */
+const ids=['penulis','refleksi1','refleksi2','tindaklanjut','penutup'];
+const links=navLinks.querySelectorAll('a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-160)cur=id});
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+});
+</script>
+</body>
+</html>
